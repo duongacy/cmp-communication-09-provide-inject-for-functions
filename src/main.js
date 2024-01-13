@@ -7,8 +7,8 @@ import KnowledgeList from './components/KnowledgeList.vue';
 
 const app = createApp(App);
 
-app.component('active-element', ActiveKnowledge);
-app.component('knowledge-element', Knowledge);
-app.component('knowledge-grid', KnowledgeList);
+app.component('active-knowledge', ActiveKnowledge);
+app.component('knowledge', Knowledge);
+app.component('knowledge-list', KnowledgeList);
 
 app.mount('#app');

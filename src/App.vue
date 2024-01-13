@@ -1,13 +1,15 @@
 <template>
   <div>
-    <active-element v-if="activeTopic" :topic-title="activeTopic.title" :text="activeTopic.fullText"></active-element>
+    <active-knowledge v-if="activeTopic" :topic-title="activeTopic.title" :text="activeTopic.fullText"></active-knowledge>
     <h2>Select a Topic</h2>
-    <knowledge-grid></knowledge-grid>
+    <knowledge-list :topics="topics"></knowledge-list>
   </div>
 </template>
 
 <script>
+import ActiveKnowledge from './components/ActiveKnowledge.vue';
 export default {
+  components: { ActiveKnowledge },
   data() {
     return {
       topics: [
@@ -28,13 +30,6 @@ export default {
         },
       ],
     };
-  },
-  provide() {
-    return {
-      topics: this.topics,
-    };
-  },
-  methods: {
   },
   mounted() {
     setTimeout(() => {
