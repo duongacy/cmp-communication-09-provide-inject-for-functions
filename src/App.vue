@@ -27,19 +27,14 @@ export default {
             'With components, you can split logic (and markup) into separate building blocks and then combine those building blocks (and re-use them) to build powerful user interfaces.',
         },
       ],
-      activeTopic: null,
     };
   },
   provide() {
     return {
       topics: this.topics,
-      selectTopic: this.activateTopic
     };
   },
   methods: {
-    activateTopic(topicId) {
-      this.activeTopic = this.topics.find((topic) => topic.id === topicId);
-    },
   },
   mounted() {
     setTimeout(() => {
